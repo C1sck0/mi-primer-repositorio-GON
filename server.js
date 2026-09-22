@@ -8,7 +8,7 @@ import checkAuthorizationTokenMiddleware from './middlewares/check_authorization
 import logMiddleware from './middlewares/log_middleware.js';
 //import bcrypt from 'bcrypt';
 
-//console.log ('hash de 1234:', bcrypt.hash('1234', 10)); // el hash de 1234 es un string que se genera a partir de la contraseña y un numero de rondas (10 en este caso)
+//console.log ('hash de 1234:', await bcrypt.hash('1234', 10)); // el hash de 1234 es un string que se genera a partir de la contraseña y un numero de rondas (10 en este caso)
 
 const app = express();
 

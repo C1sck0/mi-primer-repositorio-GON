@@ -9,7 +9,7 @@ export class LoginService {
     }
 
     async login(username, password) {
-        const user = await this.userRepo.findOne({ username: username });
+        const user = await this.userRepo.findOne({ username });
         if (!user) {
             throw new Error('Usuario o contraseña incorrectos');
         }
@@ -22,7 +22,6 @@ export class LoginService {
 
         // Generar token criptográfico
         const token = randomBytes(32).toString('hex');
-
         // Guardar la sesión con el nombre exacto de campo que espera tu esquema
         await this.sessionRepo.create({
             authorizationToken: token,
